@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+        <h4 class="text-center">ADD STUDENT DETAILS !!!</h4>
+        <form method="post">
+          {% csrf_token %}
+          <label>FIRST NAME</label>
+          <input type="text" name="fname"  class="form-control" value="">
+          <label for="">LAST NAME</label>
+          <input type="text" name="lname"  class="form-control" value="">
+          <label for="">EMAIL</label>
+          <input type="email" name="email" class="form-control" value="">
+          <label for="">MOBILE</label>
+          <input type="number" name="mobile" class="form-control" value="">
+          <label for="">PERCENTAGE</label>
+          <input type="number" name="percentage" class="form-control" step="0.01" min="0" max="100">
+          <label>PASSED OUT YEAR</label>
+          <input type="number" name="year" class="form-control" value="">
+          <label for="">LOCATION</label>
+          <input type="text" name="location" class="form-control" value="">
+          <label>COLLEGE</label>
+          <input type="text" name="college" class="form-control" value="">
+          <label for="">UNIVERSITY</label>
+          <input type="text" name="university" class="form-control" value="">
+          <div class="text-center">
+            <input type="submit" name="" value="Submit" class="btn btn-success mt-2">
+            <input type="reset" name="" value="Cancel" class="btn btn-danger mt-2">
+            <a href="{% url 'Mainpage' %}" class="btn btn-primary mt-2">Goto Mainpage</a>
+
+
+          </div>
+
+        </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>

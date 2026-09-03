@@ -1,0 +1,57 @@
+[
+    {
+        "first_name": "Pritish",
+        "last_name": "Subudhi",
+        "email": "pritishkumarsubudhi@gmail.com",
+        "mobile": 9861233020,
+        "percentage": 98,
+        "year": 2026,
+        "location": "odisha",
+        "college": "cse",
+        "university": "bput"
+    },
+    {
+        "first_name": "isu",
+        "last_name": "Subudhi",
+        "email": "pritish@gmail.com",
+        "mobile": 9090909090,
+        "percentage": 79,
+        "year": 2026,
+        "location": "bang",
+        "college": "orchid",
+        "university": "bput"
+    },
+    {
+        "first_name": "iti",
+        "last_name": "sahoo",
+        "email": "iti@gmail.com",
+        "mobile": 9090909096,
+        "percentage": 89,
+        "year": 2012,
+        "location": "bengalur",
+        "college": "IDBI",
+        "university": "utkal "
+    },
+    {
+        "first_name": "asu",
+        "last_name": "sahoo",
+        "email": "asu@gmail.com",
+        "mobile": 9861233020,
+        "percentage": 96,
+        "year": 2039,
+        "location": "hariyana",
+        "college": "orchid",
+        "university": "utkal "
+    },
+    {
+        "first_name": "suru",
+        "last_name": "sahoo",
+        "email": "suru@gmail.com",
+        "mobile": 9090909090,
+        "percentage": 98,
+        "year": 2015,
+        "location": "bolagarh",
+        "college": "gurukul",
+        "university": "utkal "
+    }
+]

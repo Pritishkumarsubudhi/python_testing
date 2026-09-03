@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="text-center">VIEWS STUDENT DETAILS !!!</h3>
+          {% if data %}
+          <table class="table table-border mt-2">
+            <thead class="bg-primary text-white">
+              <tr>
+                <th>ID</th>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>EMAIL</th>
+                <th>MOBILE</th>
+                <th>PERCENTAGE</th>
+                <th>PASSED OUT YEAR</th>
+                <th>LOCATION</th>
+                <th>COLLEGE</th>
+                <th>UNIVERSITY</th>
+                <th>OPERATIONS</th>
+
+              </tr>
+
+            </thead>
+            <tbody class="text-center text-secondary">
+              {% for i in data %}
+              <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.first_name}}</td>
+                <td>{{i.last_name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.percentage}}</td>
+                <td>{{i.year}}</td>
+                <td>{{i.location}}</td>
+                <td>{{i.college}}</td>
+                <td>{{i.universsity}}</td>
+              <td>
+              <a href="{% url 'update' i.id %}" class="btn btn-secondary btn-sm">UPDATE</a>
+              <a href="{% url 'delete_student' i.id %}" class="btn btn-danger btn-sm mt-2">DELETE</a>
+            </td>
+
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <h1 class="text-center">NO DATA HERE</h1>
+          {% endif %}
+<a href="{% url 'Mainpage' %}" class="btn btn-warning">Goto Mainpage</a>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>

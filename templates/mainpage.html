@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            padding: 20px;
+
+            background: #74816f;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+
+        .main-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+        }
+
+
+        /* =====================================
+           TOP SECTION
+        ===================================== */
+
+        .top-section {
+
+            background: #f8f6e9;
+
+            border-radius: 18px;
+
+            padding: 25px 30px;
+
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+
+        }
+
+
+        /* TITLE */
+
+        .title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 22px;
+
+        }
+
+
+        .title-icon {
+
+            width: 85px;
+
+            height: 65px;
+
+            background: #263b2f;
+
+            border-radius: 8px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-size: 35px;
+
+        }
+
+
+        .title h1 {
+
+            margin: 0;
+
+            font-size: 38px;
+
+            color: #17221b;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* LINE */
+
+        .title-line {
+
+            margin-top: 18px;
+
+            margin-bottom: 25px;
+
+            border-top: 2px dotted #aaa;
+
+        }
+
+
+        /* DESCRIPTION AREA */
+
+        .description-area {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 40px;
+
+        }
+
+
+        .description {
+
+            flex: 1;
+
+        }
+
+
+        .description-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+        }
+
+
+        .description-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            border-radius: 50%;
+
+            background: #263b2f;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 25px;
+
+        }
+
+
+        .description-title h2 {
+
+            margin: 0;
+
+            color: #263b2f;
+
+            font-size: 25px;
+
+        }
+
+
+        .description p {
+
+            margin-left: 70px;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color: #222;
+
+        }
+
+
+        /* =====================================
+           LAPTOP DESIGN
+        ===================================== */
+
+        .laptop-area {
+
+            flex: 1;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            position: relative;
+
+        }
+
+
+        .laptop {
+
+            width: 390px;
+
+            height: 245px;
+
+            background: #edf0e5;
+
+            border: 14px solid #18252d;
+
+            border-radius: 12px;
+
+            position: relative;
+
+            padding: 20px;
+
+        }
+
+
+        .laptop-sidebar {
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            width: 65px;
+
+            height: 100%;
+
+            background: #344b3c;
+
+            border-radius: 0 0 0 2px;
+
+        }
+
+
+        .profile {
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            margin: 15px auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 25px;
+
+        }
+
+
+        .side-line {
+
+            width: 30px;
+
+            height: 5px;
+
+            background: #ddd;
+
+            margin: 12px auto;
+
+            border-radius: 5px;
+
+        }
+
+
+        .screen-content {
+
+            margin-left: 75px;
+
+            padding-top: 15px;
+
+        }
+
+
+        .screen-user {
+
+            font-size: 48px;
+
+            display: inline-block;
+
+        }
+
+
+        .screen-lines {
+
+            display: inline-block;
+
+            vertical-align: top;
+
+            margin-left: 15px;
+
+            margin-top: 10px;
+
+        }
+
+
+        .screen-lines div {
+
+            width: 120px;
+
+            height: 7px;
+
+            background: #999;
+
+            margin: 10px;
+
+            border-radius: 5px;
+
+        }
+
+
+        .table {
+
+            margin-top: 15px;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 5px;
+
+        }
+
+
+        .table div {
+
+            height: 8px;
+
+            background: #aaa;
+
+            border-radius: 3px;
+
+        }
+
+
+        .books {
+
+            position: absolute;
+
+            right: -25px;
+
+            bottom: -48px;
+
+            font-size: 65px;
+
+        }
+
+
+        /* =====================================
+           FEATURES
+        ===================================== */
+
+        .features-section {
+
+            margin-top: 12px;
+
+            background: #f8f6e9;
+
+            border-radius: 18px;
+
+            padding: 20px 25px;
+
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+
+        }
+
+
+        .features-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .gear {
+
+            width: 55px;
+
+            height: 55px;
+
+            border-radius: 50%;
+
+            background: #263b2f;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 30px;
+
+        }
+
+
+        .features-heading h2 {
+
+            margin: 0;
+
+            color: #263b2f;
+
+            font-size: 25px;
+
+        }
+
+
+        .feature-line {
+
+            flex: 1;
+
+            border-top: 2px solid #ccc;
+
+        }
+
+
+        /* SIX FEATURES */
+
+        .features {
+
+            display: grid;
+
+            grid-template-columns: repeat(6, 1fr);
+
+        }
+
+
+        .feature {
+
+            text-align: center;
+
+            padding: 15px 10px;
+
+            border-right: 1px solid #aaa;
+
+        }
+
+
+        .feature:last-child {
+
+            border-right: none;
+
+        }
+
+
+        .feature a {
+
+            text-decoration: none;
+
+            color: inherit;
+
+        }
+
+
+        .feature-icon {
+
+            width: 75px;
+
+            height: 75px;
+
+            margin: auto;
+
+            border-radius: 50%;
+
+            background: #e5e6d1;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 37px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .feature:hover .feature-icon {
+
+            transform: scale(1.08);
+
+            background: #d7d9be;
+
+        }
+
+
+        .feature h3 {
+
+            margin: 12px 0 0;
+
+            font-size: 17px;
+
+            line-height: 1.3;
+
+            color: #222;
+
+        }
+
+
+        /* =====================================
+           MOBILE
+        ===================================== */
+
+        @media(max-width: 850px) {
+
+            body {
+
+                padding: 10px;
+
+            }
+
+
+            .title h1 {
+
+                font-size: 27px;
+
+            }
+
+
+            .description-area {
+
+                flex-direction: column;
+
+            }
+
+
+            .description p {
+
+                margin-left: 0;
+
+            }
+
+
+            .laptop {
+
+                width: 300px;
+
+                height: 190px;
+
+            }
+
+
+            .features {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+
+            .feature {
+
+                border-right: none;
+
+                border-bottom: 1px solid #aaa;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="main-container">
+
+
+    <!-- =====================================
+         DESCRIPTION SECTION
+    ===================================== -->
+
+    <div class="top-section">
+
+
+        <!-- TITLE -->
+
+        <div class="title">
+
+            <div class="title-icon">
+                👤☰
+            </div>
+
+
+            <h1>
+                STUDENT MANAGEMENT SYSTEM
+            </h1>
+
+        </div>
+
+
+        <div class="title-line"></div>
+
+
+        <!-- DESCRIPTION -->
+
+        <div class="description-area">
+
+
+            <div class="description">
+
+
+                <div class="description-title">
+
+                    <div class="description-icon">
+                        📄
+                    </div>
+
+
+                    <h2>
+                        DESCRIPTION
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    A simple web based project
+                    to manage student information
+                    efficiently. This system allows
+                    adding, viewing, searching,
+                    updating and deleting
+                    student records.
+
+                </p>
+
+
+            </div>
+
+
+            <!-- LAPTOP -->
+
+            <div class="laptop-area">
+
+
+                <div class="laptop">
+
+
+                    <div class="laptop-sidebar">
+
+                        <div class="profile">
+                            👤
+                        </div>
+
+                        <div class="side-line"></div>
+                        <div class="side-line"></div>
+                        <div class="side-line"></div>
+                        <div class="side-line"></div>
+
+                    </div>
+
+
+                    <div class="screen-content">
+
+
+                        <span class="screen-user">
+                            👤
+                        </span>
+
+
+                        <div class="screen-lines">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+
+                        <div class="table">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="books">
+                    📚
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         FEATURES SECTION
+    ===================================== -->
+
+    <div class="features-section">
+
+
+        <div class="features-heading">
+
+
+            <div class="gear">
+                ⚙
+            </div>
+
+
+            <h2>
+                FEATURES
+            </h2>
+
+
+            <div class="feature-line"></div>
+
+
+        </div>
+
+
+
+        <div class="features">
+
+
+            <!-- ===============================
+                 ADD NEW STUDENT
+            =============================== -->
+
+            <div class="feature">
+
+                <a href="{% url 'add_student' %}">
+
+                    <div class="feature-icon">
+                        👤+
+                    </div>
+
+                    <h3>
+                        Add New<br>
+                        Student
+                    </h3>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- ===============================
+                 VIEW ALL STUDENTS
+            =============================== -->
+
+            <div class="feature">
+
+                <a href="{% url 'view_student' %}">
+
+                    <div class="feature-icon">
+                        👥
+                    </div>
+
+                    <h3>
+                        View All<br>
+                        Students
+                    </h3>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- ===============================
+                 SEARCH STUDENT
+            =============================== -->
+
+            <div class="feature">
+
+                <a href="{% url 'search_student' %}">
+
+                    <div class="feature-icon">
+                        🔍
+                    </div>
+
+                    <h3>
+                        Search<br>
+                        Student
+                    </h3>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- ===============================
+                 UPDATE STUDENT
+            =============================== -->
+
+            <div class="feature">
+
+                <a href="{% url 'view_student' %}">
+
+                    <div class="feature-icon">
+                        📝
+                    </div>
+
+                    <h3>
+                        Update<br>
+                        Student Info
+                    </h3>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- ===============================
+                 DELETE STUDENT
+            =============================== -->
+
+            <div class="feature">
+
+                <a href="{% url 'view_student' %}">
+
+                    <div class="feature-icon">
+                        🗑️
+                    </div>
+
+                    <h3>
+                        Delete<br>
+                        Student
+                    </h3>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- ===============================
+                 FILE HANDLING
+            =============================== -->
+
+            <div class="feature">
+
+                <a href="{% url 'save_file' %}">
+
+                    <div class="feature-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        File Handling<br>
+                        (Save & Load)
+                    </h3>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

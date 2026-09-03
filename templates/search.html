@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Student</title>
+    {% include 'cdnlines.html' %}
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-12">
+
+            <div class="card shadow-lg border-0">
+
+                <div class="card-header bg-primary text-white text-center">
+                    <h3>Search Student</h3>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Enter Student First Name
+                            </label>
+
+                            <input type="text"
+                                   name="fname"
+                                   class="form-control"
+                                   placeholder="Enter first name"
+                                   required>
+                        </div>
+
+                        <div class="text-center">
+
+                            <button type="submit"
+                                    class="btn btn-success">
+                                Search
+                            </button>
+
+                            <button type="reset"
+                                    class="btn btn-danger">
+                                Cancel
+                            </button>
+
+                            <a href="{% url 'Mainpage' %}"
+                               class="btn btn-primary">
+                                Mainpage
+                            </a>
+
+                        </div>
+
+                    </form>
+
+
+                    {% if data %}
+
+                    <hr>
+
+                    <h4 class="text-center mt-4">
+                        Search Result
+                    </h4>
+
+                    <div class="table-responsive mt-3">
+
+                        <table class="table table-bordered table-hover">
+
+                            <thead class="table-dark text-center">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile</th>
+                                    <th>Percentage</th>
+                                    <th>PASSED OUT YEAR</th>
+                                    <th>LOCATION</th>
+                                    <th>COLLEGE</th>
+                                    <th>UNIVERSITY</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="text-center">
+
+                                {% for i in data %}
+
+                                <tr>
+                                    <td>{{ i.id }}</td>
+                                    <td>{{ i.first_name }}</td>
+                                    <td>{{ i.last_name }}</td>
+                                    <td>{{ i.email }}</td>
+                                    <td>{{ i.mobile }}</td>
+                                    <td>{{ i.percentage }}</td>
+                                    <td>{{i.year}}</td>
+                                    <td>{{i.location}}</td>
+                                    <td>{{i.college}}</td>
+                                    <td>{{i.universsity}}</td>
+                                </tr>
+
+                                {% endfor %}
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    {% elif request.method == 'POST' %}
+
+                    <h4 class="text-center text-danger mt-4">
+                        No Student Found
+                    </h4>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
